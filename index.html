@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Click le clown</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    </div>
+    <header>
+        <h1>Clickos le clownos</h1>
+        <p id="score"></p>
+        <p id="time" class="text-xl"></p>
+        <button class="stop" id="stop-game" onclick="stopGame()">Stop</button>
+        <div class="menu-container">
+            <button type="button" class="burger" onclick="toggleMenu()">
+                <img src="./assets/image/menuclosed.svg" class="closed" id="menuclosed" alt="menuclosed">
+            </button>
+            <ul class="menu">
+                <li class="relative">
+                    <button class="menuItem" id="lightning">Lightning</button>
+                    <ul class="submenu">
+                        <li><button class="switch" id="lightmode">Lightmode</button></li>
+                        <li><button class="switch" id="darkmode">Darkmode</button></li>
+                    </ul>
+                </li>
+                <li class="relative">
+                    <button class="menuItem" id="Sound">Sound</button>
+                    <ul class="submenu">
+                        <li><button class="menuItem" id="mute">Muet</button></li>
+                        <li><input type="range" id="volume-slider" class="volume-slider" min="0" max="100"
+                                value="50"></button></li>
+                    </ul>
+                </li>
+                <li class="relative">
+                    <button class="menuItem" id="difficulty">Difficulty</button>
+                    <ul class="submenu">
+                        <li><button class="menuItem" onclick="getInterval()" id="facile">Facile</button></li>
+                        <li><button class="menuItem" onclick="getInterval()" id="moyen">Moyen</button></li>
+                        <li><button class="menuItem" onclick="getInterval()" id="difficile">Difficile</button></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <div id="gameContainer">
+            <img id="clown" src="./assets/image/clown.png" onclick="clickClown()" alt="Clown"
+                onmousedown="return false">
+            <div class="video-container">
+                <video autoplay muted loop id="background-video-light">
+                    <source src="./assets/image/fondlight.mp4" type="video/mp4">
+                </video>
+                <video autoplay muted loop id="background-video-dark">
+                <source src="./assets/image/fonddark.mp4" type="video/mp4">
+            </video>
+            </div>
+    </main>
+    <script src="./assets/js/main.js"></script>
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+
+</html>
